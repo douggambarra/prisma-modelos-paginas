@@ -76,9 +76,15 @@ export function AppSidebar() {
       <SidebarFooter className="p-4">
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton className="text-sidebar-foreground/50 hover:text-sidebar-foreground hover:bg-sidebar-accent/50">
-              <Settings className="mr-3 h-4 w-4" />
-              {!collapsed && <span>Configurações</span>}
+            <SidebarMenuButton asChild>
+              <NavLink
+                to="/configuracoes"
+                className="text-sidebar-foreground/50 hover:text-sidebar-foreground hover:bg-sidebar-accent/50"
+                activeClassName="bg-sidebar-accent text-sidebar-primary font-medium"
+              >
+                <Settings className="mr-3 h-4 w-4" />
+                {!collapsed && <span>Configurações</span>}
+              </NavLink>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
