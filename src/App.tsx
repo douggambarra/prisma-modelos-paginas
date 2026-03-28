@@ -9,6 +9,11 @@ import Cadernos from "./pages/Cadernos";
 import Concursos from "./pages/Concursos";
 import Provas from "./pages/Provas";
 import Questoes from "./pages/Questoes";
+import Ranking from "./pages/Ranking";
+import Historico from "./pages/Historico";
+import Estatisticas from "./pages/Estatisticas";
+import Comentarios from "./pages/Comentarios";
+import Configuracoes from "./pages/Configuracoes";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +31,11 @@ const App = () => (
             <Route path="/concursos" element={<Concursos />} />
             <Route path="/provas" element={<Provas />} />
             <Route path="/questoes" element={<Questoes />} />
+            <Route path="/ranking" element={<Ranking />} />
+            <Route path="/historico" element={<Historico />} />
+            <Route path="/estatisticas" element={<Estatisticas />} />
+            <Route path="/comentarios" element={<Comentarios />} />
+            <Route path="/configuracoes" element={<Configuracoes />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
