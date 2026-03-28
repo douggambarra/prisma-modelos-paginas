@@ -20,6 +20,10 @@ const mainItems = [
   { title: "Concursos", url: "/concursos", icon: GraduationCap },
   { title: "Provas", url: "/provas", icon: FileText },
   { title: "Questões", url: "/questoes", icon: BookOpen },
+  { title: "Ranking", url: "/ranking", icon: Trophy },
+  { title: "Histórico", url: "/historico", icon: Clock },
+  { title: "Estatísticas", url: "/estatisticas", icon: BarChart3 },
+  { title: "Comentários", url: "/comentarios", icon: MessageSquare },
 ];
 
 export function AppSidebar() {
