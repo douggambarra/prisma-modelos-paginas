@@ -9,6 +9,11 @@ import Cadernos from "./pages/Cadernos";
 import Concursos from "./pages/Concursos";
 import Provas from "./pages/Provas";
 import Questoes from "./pages/Questoes";
+import Ranking from "./pages/Ranking";
+import Historico from "./pages/Historico";
+import Estatisticas from "./pages/Estatisticas";
+import Comentarios from "./pages/Comentarios";
+import Configuracoes from "./pages/Configuracoes";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
