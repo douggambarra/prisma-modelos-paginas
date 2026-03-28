@@ -1,4 +1,4 @@
-import { BookOpen, FileText, FolderOpen, LayoutDashboard, GraduationCap, Settings, LogOut } from "lucide-react";
+import { BookOpen, FileText, FolderOpen, LayoutDashboard, GraduationCap, Settings, Trophy, Clock, BarChart3, MessageSquare } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
 import {
