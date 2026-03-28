@@ -57,6 +57,16 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        prisma: {
+          pink: "hsl(var(--prisma-pink))",
+          yellow: "hsl(var(--prisma-yellow))",
+          cyan: "hsl(var(--prisma-cyan))",
+          green: "hsl(var(--prisma-green))",
+          orange: "hsl(var(--prisma-orange))",
+        },
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
