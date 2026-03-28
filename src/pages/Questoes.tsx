@@ -328,25 +328,42 @@ export default function Questoes() {
           return (
             <Card key={questao.id} className="border-0 shadow-sm overflow-hidden">
               <CardContent className="p-0">
+                {/* Header - two rows like reference */}
                 <button
                   onClick={() => toggleExpand(questao.id)}
-                  className="w-full flex items-center justify-between p-5 hover:bg-secondary/30 transition-colors text-left"
+                  className="w-full text-left hover:bg-secondary/30 transition-colors"
                 >
-                  <div className="flex items-center gap-3">
-                    <span className="text-sm font-bold text-muted-foreground w-8">Q{idx + 1}</span>
-                    <div className="flex flex-wrap items-center gap-2">
-                      <Badge variant="secondary" className="text-xs">{questao.materia}</Badge>
-                      <Badge variant="outline" className={dificuldadeConfig[questao.dificuldade]}>{questao.dificuldade}</Badge>
-                      <span className="text-xs text-muted-foreground">{questao.banca} • {questao.concurso} • {questao.ano}</span>
+                  {/* Row 1: Number, ID, Matéria > Assunto */}
+                  <div className="flex items-center gap-3 px-5 pt-4 pb-1.5">
+                    <span className="text-sm text-muted-foreground font-medium">{idx + 1}</span>
+                    <Badge variant="outline" className="text-xs font-mono px-2 py-0.5 border-border">
+                      Q{questao.id.padStart(7, '0')}
+                    </Badge>
+                    <div className="flex items-center gap-1.5 text-sm">
+                      <span className="font-medium text-foreground">{questao.materia}</span>
+                      <span className="text-muted-foreground">›</span>
+                      <span className="text-muted-foreground">{questao.assunto}</span>
                     </div>
-                    {revelada && (
-                      <div className={`flex items-center gap-1 text-xs ${acertou ? "text-accent" : "text-destructive"}`}>
-                        {acertou ? <CheckCircle2 className="h-4 w-4" /> : <XCircle className="h-4 w-4" />}
-                        {acertou ? "Correta" : "Incorreta"}
-                      </div>
-                    )}
+                    <div className="ml-auto">
+                      {revelada && (
+                        <div className={`flex items-center gap-1 text-xs ${acertou ? "text-accent" : "text-destructive"}`}>
+                          {acertou ? <CheckCircle2 className="h-4 w-4" /> : <XCircle className="h-4 w-4" />}
+                          {acertou ? "Correta" : "Incorreta"}
+                        </div>
+                      )}
+                      {!revelada && (
+                        isExpanded ? <ChevronUp className="h-4 w-4 text-muted-foreground" /> : <ChevronDown className="h-4 w-4 text-muted-foreground" />
+                      )}
+                    </div>
                   </div>
-                  {isExpanded ? <ChevronUp className="h-4 w-4 text-muted-foreground" /> : <ChevronDown className="h-4 w-4 text-muted-foreground" />}
+                  {/* Row 2: Ano, Banca, Órgão, Prova */}
+                  <div className="flex items-center gap-4 px-5 pb-3 text-xs">
+                    <span><strong className="text-muted-foreground">Ano:</strong> <span className="text-foreground">{questao.ano}</span></span>
+                    <span><strong className="text-muted-foreground">Banca:</strong> <span className="text-accent">{questao.banca}</span></span>
+                    <span><strong className="text-muted-foreground">Órgão:</strong> <span className="text-foreground">{questao.concurso}</span></span>
+                    <span><strong className="text-muted-foreground">Prova:</strong> <span className="text-accent">{questao.banca} - {questao.ano} - {questao.concurso}</span></span>
+                    <Badge variant="outline" className={`ml-auto text-[10px] ${dificuldadeConfig[questao.dificuldade]}`}>{questao.dificuldade}</Badge>
+                  </div>
                 </button>
 
                 {isExpanded && (
