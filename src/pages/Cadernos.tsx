@@ -102,7 +102,7 @@ export default function Cadernos() {
           <h1 className="text-2xl font-bold text-foreground">Cadernos</h1>
           <p className="text-muted-foreground mt-1">Organize suas questões em cadernos de estudo</p>
         </div>
-        <Button className="bg-accent text-accent-foreground hover:bg-accent/90 gap-2">
+        <Button className="bg-accent text-accent-foreground hover:bg-accent/90 gap-2" onClick={() => setDialogOpen(true)}>
           <Plus className="h-4 w-4" />
           Novo Caderno
         </Button>
