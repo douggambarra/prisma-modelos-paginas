@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FolderOpen, Plus, MoreVertical, BookOpen, Clock, ChevronRight, Search, Grid3X3, List } from "lucide-react";
+import NovoCadernoDialog from "@/components/cadernos/NovoCadernoDialog";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
