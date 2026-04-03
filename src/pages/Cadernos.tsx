@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FolderOpen, Plus, MoreVertical, BookOpen, Clock, ChevronRight, Search, Grid3X3, List } from "lucide-react";
+import NovoCadernoDialog from "@/components/cadernos/NovoCadernoDialog";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -88,6 +89,7 @@ const cadernos: Caderno[] = [
 export default function Cadernos() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [searchTerm, setSearchTerm] = useState("");
+  const [dialogOpen, setDialogOpen] = useState(false);
 
   const filtered = cadernos.filter((c) =>
     c.nome.toLowerCase().includes(searchTerm.toLowerCase())
@@ -100,7 +102,7 @@ export default function Cadernos() {
           <h1 className="text-2xl font-bold text-foreground">Cadernos</h1>
           <p className="text-muted-foreground mt-1">Organize suas questões em cadernos de estudo</p>
         </div>
-        <Button className="bg-accent text-accent-foreground hover:bg-accent/90 gap-2">
+        <Button className="bg-accent text-accent-foreground hover:bg-accent/90 gap-2" onClick={() => setDialogOpen(true)}>
           <Plus className="h-4 w-4" />
           Novo Caderno
         </Button>
@@ -205,7 +207,7 @@ export default function Cadernos() {
           })}
 
           {/* Add new card */}
-          <Card className="border-2 border-dashed border-muted cursor-pointer hover:border-accent/50 hover:bg-accent/5 transition-all">
+          <Card className="border-2 border-dashed border-muted cursor-pointer hover:border-accent/50 hover:bg-accent/5 transition-all" onClick={() => setDialogOpen(true)}>
             <CardContent className="p-5 flex flex-col items-center justify-center min-h-[220px] text-muted-foreground">
               <Plus className="h-8 w-8 mb-2" />
               <span className="text-sm font-medium">Criar novo caderno</span>
@@ -245,6 +247,7 @@ export default function Cadernos() {
           })}
         </div>
       )}
+      <NovoCadernoDialog open={dialogOpen} onOpenChange={setDialogOpen} />
     </div>
   );
 }
