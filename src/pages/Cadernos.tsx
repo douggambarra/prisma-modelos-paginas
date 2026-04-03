@@ -247,6 +247,7 @@ export default function Cadernos() {
           })}
         </div>
       )}
+      <NovoCadernoDialog open={dialogOpen} onOpenChange={setDialogOpen} />
     </div>
   );
 }
