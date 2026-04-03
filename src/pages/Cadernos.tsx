@@ -89,6 +89,7 @@ const cadernos: Caderno[] = [
 export default function Cadernos() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [searchTerm, setSearchTerm] = useState("");
+  const [dialogOpen, setDialogOpen] = useState(false);
 
   const filtered = cadernos.filter((c) =>
     c.nome.toLowerCase().includes(searchTerm.toLowerCase())
